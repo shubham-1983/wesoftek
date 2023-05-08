@@ -1,4 +1,4 @@
-import 'package:wesoftek/views/Admin/loginScreen.dart';
+import 'package:wesoftek/views/Admin/login/loginScreen.dart';
 import 'package:flutter/material.dart';
 
 class ResPasswordScreen extends StatefulWidget {

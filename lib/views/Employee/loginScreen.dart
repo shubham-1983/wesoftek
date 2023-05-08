@@ -1,9 +1,6 @@
 import 'dart:math';
-import 'package:wesoftek/views/Employee/homePAge.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_truecaller/flutter_truecaller.dart';
 import 'package:otpless_flutter/otpless_flutter.dart';
-import 'package:wesoftek/views/Employee/nonTruecallerUser.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -13,7 +10,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final FlutterTruecaller truecaller = FlutterTruecaller();
+  // final FlutterTruecaller truecaller = FlutterTruecaller();
   final _otplessFlutterPlugin = Otpless();
 
   // ** Function to initiate the login process
@@ -28,20 +25,20 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  Future getTruecallerProfile() async {
-    truecaller.initializeSDK(
-      sdkOptions: FlutterTruecallerScope.SDK_OPTION_WITH_OTP,
-      footerType: FlutterTruecallerScope.FOOTER_TYPE_ANOTHER_METHOD,
-      consentMode: FlutterTruecallerScope.CONSENT_MODE_POPUP,
-    );
-  }
+  // Future getTruecallerProfile() async {
+  //   truecaller.initializeSDK(
+  //     sdkOptions: FlutterTruecallerScope.SDK_OPTION_WITH_OTP,
+  //     footerType: FlutterTruecallerScope.FOOTER_TYPE_ANOTHER_METHOD,
+  //     consentMode: FlutterTruecallerScope.CONSENT_MODE_POPUP,
+  //   );
+  // }
 
 
   @override
   void initState() {
     super.initState();
     initPlatformState();
-    getTruecallerProfile();
+    // getTruecallerProfile();
   }
 
   // ** Function that is called when page is loaded
@@ -121,20 +118,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                           ),
                                         ),
                                         OutlinedButton(
-                                          onPressed: () async {
-                                            await truecaller.getProfile();
-                                            FlutterTruecaller.manualVerificationRequired.listen((required) {
-                                              if(required) {
-                                                Navigator.of(context).pushReplacement(
-                                                MaterialPageRoute(builder: (_) => VerifyMobileNumber()));
-                                            }else{
-                                                Navigator.of(context).pushReplacement(
-                                                MaterialPageRoute(builder: (_) => HomePage())
-                                                );
-                                            }
-                                            });
-
-                                          },
+                                          onPressed: () {
+                                            // await truecaller.getProfile();
+                                            // FlutterTruecaller.manualVerificationRequired.listen((required) {
+                                            //   if(required) {
+                                            //     Navigator.of(context).pushReplacement(
+                                            //     MaterialPageRoute(builder: (_) => VerifyMobileNumber()));
+                                            // }else{
+                                            //     Navigator.of(context).pushReplacement(
+                                            //     MaterialPageRoute(builder: (_) => HomePage())
+                                            //     );
+                                            // }
+                                            },
                                           child: Text(
                                             'Continue with truecaller',
                                             style: TextStyle(

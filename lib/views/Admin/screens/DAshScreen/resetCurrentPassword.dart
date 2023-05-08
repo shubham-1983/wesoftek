@@ -1,4 +1,4 @@
-import 'package:wesoftek/views/Admin/loginScreen.dart';
+import 'package:wesoftek/views/Admin/login/loginScreen.dart';
 import 'package:flutter/material.dart';
 
 class ResCurrPasswordScreen extends StatefulWidget {
@@ -60,7 +60,7 @@ class _ResCurrPasswordScreenState extends State<ResCurrPasswordScreen> {
               ),
               SizedBox(height: 60),
               TextField(
-                controller: _newpasswordController,
+                controller: _currpasswordController,
                 obscureText: true,
                 decoration: InputDecoration(
                     hintText: 'Enter Current password',
